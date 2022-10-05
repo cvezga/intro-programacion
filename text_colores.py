@@ -1,25 +1,26 @@
 import colores
 
-print(colores.SET_RED_FOREGROUND)
+colores.setRedForeground()
+print(colores.SET_RED_FOREGROUND, end='')
 print("rojo")
 
-print(colores.SET_GREEN_FOREGROUND)
+colores.setGreenForeground()
 print("verde")
 
-print(colores.SET_BROWN_FOREGROUND)
+colores.setBrownForeground()
 print("marron")
 
-print(colores.SET_BLUE_FOREGROUND)
+colores.setBlueForeground()
 print("azul")
 
-print(colores.SET_MAGENTA_FOREGROUND)
+colores.setMagentaForeground()
 print("magenta")
 
-print(colores.SET_CYAN_FOREGROUND)
+colores.setCyanForeground()
 print("cyan")
 
-print(colores.SET_WHITE_FOREGROUND)
+colores.setWhiteForeground()
 print("blanco")
 
-print(colores.RESET_ALL_ATTRIBUTES)
+colores.resetAllAttributes()
 print("normal")
