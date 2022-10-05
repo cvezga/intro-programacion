@@ -1,7 +1,8 @@
 import colores
 
+colores.eraseWholeDisplay()
+
 colores.setRedForeground()
-print(colores.SET_RED_FOREGROUND, end='')
 print("rojo")
 
 colores.setGreenForeground()
@@ -24,3 +25,4 @@ print("blanco")
 
 colores.resetAllAttributes()
 print("normal")
+

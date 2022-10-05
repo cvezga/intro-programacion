@@ -1,37 +1,42 @@
-ESC = chr(27)
-RESET_ALL_ATTRIBUTES = "".join((ESC, "[0m"))
-SET_BOLD = "".join((ESC, "[1m"))
-SET_HALF_BRIGHT = "".join((ESC, "[2m"))
-SET_UNDERSCORE = "".join((ESC, "[4m"))
+__ESC = chr(27)
+__RESET_ALL_ATTRIBUTES = "".join((__ESC, "[0m"))
+__SET_BOLD = "".join((__ESC, "[1m"))
+__SET_HALF_BRIGHT = "".join((__ESC, "[2m"))
+__SET_UNDERSCORE = "".join((__ESC, "[4m"))
 
-SET_RED_FOREGROUND = "".join((ESC,"[31m"))
-SET_GREEN_FOREGROUND = "".join((ESC,"[32m"))
-SET_BROWN_FOREGROUND = "".join((ESC,"[33m"))
-SET_BLUE_FOREGROUND = "".join((ESC,"[34m"))
-SET_MAGENTA_FOREGROUND = "".join((ESC,"[35m"))
-SET_CYAN_FOREGROUND = "".join((ESC,"[36m"))
-SET_WHITE_FOREGROUND = "".join((ESC,"[37m"))
+__SET_RED_FOREGROUND = "".join((__ESC,"[31m"))
+__SET_GREEN_FOREGROUND = "".join((__ESC,"[32m"))
+__SET_BROWN_FOREGROUND = "".join((__ESC,"[33m"))
+__SET_BLUE_FOREGROUND = "".join((__ESC,"[34m"))
+__SET_MAGENTA_FOREGROUND = "".join((__ESC,"[35m"))
+__SET_CYAN_FOREGROUND = "".join((__ESC,"[36m"))
+__SET_WHITE_FOREGROUND = "".join((__ESC,"[37m"))
+
+__ERASE_WHOLE_DISPLAY = "".join((__ESC,"[2J"))
 
 def setRedForeground():
-    print(SET_RED_FOREGROUND, end='')
+    print(__SET_RED_FOREGROUND, end='')
 
 def setGreenForeground():
-    print(SET_GREEN_FOREGROUND, end='')
+    print(__SET_GREEN_FOREGROUND, end='')
 
 def setBrownForeground():
-    print(SET_BROWN_FOREGROUND, end='')
+    print(__SET_BROWN_FOREGROUND, end='')
 
 def setBlueForeground():
-    print(SET_BLUE_FOREGROUND, end='')
+    print(__SET_BLUE_FOREGROUND, end='')
 
 def setMagentaForeground():
-    print(SET_MAGENTA_FOREGROUND, end='')
+    print(__SET_MAGENTA_FOREGROUND, end='')
 
 def setCyanForeground():
-    print(SET_CYAN_FOREGROUND, end='')
+    print(__SET_CYAN_FOREGROUND, end='')
 
 def setWhiteForeground():
-    print(SET_WHITE_FOREGROUND, end='')
+    print(__SET_WHITE_FOREGROUND, end='')
 
 def resetAllAttributes():
-    print(RESET_ALL_ATTRIBUTES, end='')
+    print(__RESET_ALL_ATTRIBUTES, end='')
+
+def eraseWholeDisplay():
+    print(__ERASE_WHOLE_DISPLAY, end='')
