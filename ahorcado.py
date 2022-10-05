@@ -42,13 +42,22 @@ palabra = result['body']['Word'].upper()
 _letras = letras(palabra)
 _sinletras = sin_letras(palabra)
 
+turno = 0
 
 while True:
 
+    turno += 1
+
+    if(turno>8):
+        print(f'Perdiste! la palabra era: {palabra}')
+        break
+
     colores.eraseWholeDisplay()
 
-    print(palabra)
+    #print(palabra)
   
+    print(f' turno: {turno}')
+    print()
     print( '     +------+     ')
     print( '     | /    |     ')
     print( '     |/    ( )    ')
