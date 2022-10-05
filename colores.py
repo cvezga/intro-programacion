@@ -1,0 +1,13 @@
+ESC = chr(27)
+RESET_ALL_ATTRIBUTES = "".join((ESC, "[0m"))
+SET_BOLD = "".join((ESC, "[1m"))
+SET_HALF_BRIGHT = "".join((ESC, "[2m"))
+SET_UNDERSCORE = "".join((ESC, "[4m"))
+
+SET_RED_FOREGROUND = "".join((ESC,"[31m"))
+SET_GREEN_FOREGROUND = "".join((ESC,"[32m"))
+SET_BROWN_FOREGROUND = "".join((ESC,"[33m"))
+SET_BLUE_FOREGROUND = "".join((ESC,"[34m"))
+SET_MAGENTA_FOREGROUND = "".join((ESC,"[35m"))
+SET_CYAN_FOREGROUND = "".join((ESC,"[36m"))
+SET_WHITE_FOREGROUND = "".join((ESC,"[37m"))
