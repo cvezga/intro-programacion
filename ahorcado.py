@@ -1,3 +1,4 @@
+from re import U
 import urllib.request as urllib2
 import json
 import colores
@@ -19,6 +20,15 @@ def concatena(arreglo):
     for letra in arreglo:
         letras += letra + " "
     return letras; 
+
+def faltan_letras(letras):
+    faltan = False
+    for letra in letras:
+        if letra == '_':
+            faltan = True
+            break
+
+    return faltan;
 
 def rellena(letras,sinletras,caracter):
     i =0;
@@ -49,12 +59,21 @@ malas = 0
 
 letras_leidas = ""
 
+cara1 = '🙁'
+cara2 = '🤪'
+cara3 = '🤩'
+cara = cara1
+
 while True:
 
     
-    if(malas>8):
-        print(f'Perdiste! la palabra era: {palabra}')
-        break
+    faltan = faltan_letras(_sinletras)
+
+    if(faltan and malas>8):
+        cara = cara2
+        
+    if(faltan == False):
+        cara = cara3    
 
     colores.eraseWholeDisplay()
 
@@ -64,13 +83,22 @@ while True:
     print()
     print( '     +------+     ')
     print( '     | /    |     ')
-    print( '     |/    ( )    ')
+    print(f'     |/     {cara}   ')
     print( '     |     /|\    ')
     print(f'     |      |        {concatena(_sinletras)}')
     print( '     |     / \    ')
     print( '     |            ')
     print( '------------------') 
     print(letras_leidas)
+
+    if(faltan == False):
+        print(f'GANASTE!')
+        break
+
+    if(malas>7):
+        print(f'Perdiste! la palabra era: {palabra}')
+        break
+
 
     caracter = input('Digite un caracter: ').upper()
     letras_leidas += caracter
