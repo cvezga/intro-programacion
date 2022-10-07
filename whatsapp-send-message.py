@@ -6,6 +6,23 @@ auth_token = os.environ['WHATSAPP']
 phone_from = os.environ['WHATSAPP_PHONE_FROM']
 phone_to = os.environ['WHATSAPP_PHONE_TO']
 
+print(auth_token)
+print(phone_from)
+print(phone_to)
+
+factura = '''
+C h a l e t   O c a m p o\n
+-------------------------\n
+No.: 10-0023  07-Oct-2022\n
+
+2 Balde Nac.    14.000,00\n
+1 Patacon Chal.  3.000,00\n
+3 Chiliguaro     3.000.00\n
+                ---------\n
+         Total: 20.000,00\n
+
+'''
+
 headers = {
     'Authorization': 'Bearer '+auth_token+"'",
     'Content-Type': 'application/json'
@@ -53,4 +70,3 @@ body2 = data2.replace("{phone_to}", phone_to)
 response = requests.post(f'https://graph.facebook.com/v15.0/{phone_from}/messages', headers=headers, data=body)
 
 print(response.text)
-
