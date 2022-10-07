@@ -1,5 +1,6 @@
 import os
 import requests
+import json
 
 auth_token = os.environ['WHATSAPP']
 phone_from = os.environ['WHATSAPP_PHONE_FROM']
@@ -15,9 +16,17 @@ data = '''
   "to": "{phone_to}", 
   "type": "template", 
   "template": { 
-    "name": "hello_world", 
-    "language": { "code": "en_US" } 
-    } 
+    "name": "oferta_chalet_ocampo", 
+    "language": { "code": "es" },
+     "components" : 
+             [
+                    {
+                        "type": "body",
+                        "parameters": [ { "type": "text", "text": "- Balde nacional a 7 mil!" } ]
+                    }
+            ]           
+        
+    }
 }
 '''
 
@@ -41,7 +50,7 @@ data2 =  '''
 body = data.replace("{phone_to}", phone_to)
 body2 = data2.replace("{phone_to}", phone_to)
 
-response = requests.post(f'https://graph.facebook.com/v15.0/{phone_from}/messages', headers=headers, data=body2)
+response = requests.post(f'https://graph.facebook.com/v15.0/{phone_from}/messages', headers=headers, data=body)
 
-print(response)
+print(response.text)
 
